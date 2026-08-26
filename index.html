@@ -1,0 +1,199 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Harsh Vora | Software Engineer</title>
+<meta name="description" content="Software engineer working on systems and GPU performance. CUDA, eBPF, inference optimization.">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800;900&family=JetBrains+Mono:wght@400;500;600&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="css/style.css">
+</head>
+<body id="hero">
+
+<header class="nav">
+  <a class="brand" href="#hero">HV<span>.</span></a>
+  <nav class="nav-links">
+    <a href="#about">About</a>
+    <a href="#skills">Skills</a>
+    <a href="#projects">Projects</a>
+    <a href="#experience">Experience</a>
+    <a href="#contact">Contact</a>
+  </nav>
+</header>
+
+<main>
+  <!-- ===================== HERO ===================== -->
+  <section class="hero">
+    <div class="badge"><span class="dot"></span>Currently — eBPF-based Kubernetes observability @ Sedai</div>
+    <h1>Hi, I'm <span class="hl">Harsh Vora</span></h1>
+    <p class="hero-lede">
+      Software engineer working on systems and GPU performance. From eBPF observability
+      agents that watch a cluster without slowing it down, to hand-written CUDA kernels.
+      I'd rather find out <em>why</em> something is slow than paper over it.
+    </p>
+    <div class="hero-cta">
+      <a class="btn" href="#projects">View my work</a>
+      <a class="btn ghost" href="#contact">Get in touch</a>
+    </div>
+  </section>
+
+  <!-- ===================== ABOUT ===================== -->
+  <section id="about" class="section">
+    <p class="sec-label"><span>01</span> / About</p>
+    <h2 class="sec-title">A little about me</h2>
+    <div class="about-grid">
+      <div class="about-copy">
+        <p>
+          Most of what I work on lives below the part anyone sees. The kernel that decides
+          how fast a run actually goes, the observability agent that has to watch a whole
+          cluster without becoming the reason it's slow. I like taking something sluggish,
+          finding out exactly where the time goes, and rebuilding it around that answer.
+          <em>[Edit this bio to your voice.]</em>
+        </p>
+        <p>
+          I hold an M.S. in Computer Science from NC State and a B.Tech from Manipal
+          Institute of Technology. Today I build eBPF-based Kubernetes observability at
+          Sedai, and before that I spent two and a half years at Juniper Networks.
+        </p>
+      </div>
+      <div class="stats">
+        <div class="stat"><span class="num">25×</span><span class="cap">cuDNN speedup at scale (CNN project)</span></div>
+        <div class="stat"><span class="num">5×</span><span class="cap">faster inference via TensorRT</span></div>
+        <div class="stat"><span class="num">43×</span><span class="cap">less on-chip traffic from tiling</span></div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ===================== SKILLS ===================== -->
+  <section id="skills" class="section">
+    <p class="sec-label"><span>02</span> / Skills</p>
+    <h2 class="sec-title">Tools of the trade</h2>
+    <div class="skills-grid">
+      <div class="skill-col">
+        <h3>Languages</h3>
+        <div class="pills"><span>C++</span><span>Go</span><span>C</span><span>CUDA</span><span>Python</span></div>
+      </div>
+      <div class="skill-col">
+        <h3>GPU / ML</h3>
+        <div class="pills"><span>CUDA</span><span>cuDNN</span><span>cuBLAS</span><span>TensorRT</span><span>PyTorch</span><span>Nsight</span></div>
+      </div>
+      <div class="skill-col">
+        <h3>Systems &amp; Infra</h3>
+        <div class="pills"><span>Kubernetes</span><span>eBPF</span><span>Docker</span><span>Linux</span><span>OpenTelemetry</span></div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ===================== PROJECTS ===================== -->
+  <section id="projects" class="section">
+    <p class="sec-label"><span>03</span> / Work</p>
+    <h2 class="sec-title">Featured projects</h2>
+
+    <!-- Project 01: CNN (rich) -->
+    <article class="project featured">
+      <div class="project-num">01</div>
+      <div class="project-main">
+        <div class="project-links">
+          <a href="cnn.html">Full writeup ↗</a>
+          <a href="https://github.com/harshvora7/accelerating_cnn" target="_blank" rel="noopener">GitHub ↗</a>
+        </div>
+        <h3>Accelerating CNN Inference on a GPU</h3>
+        <p class="project-desc">
+          Every way a CNN's forward pass gets run on an NVIDIA GPU, from a naive CUDA kernel
+          to a production TensorRT engine. Implemented from scratch, checked against a CPU
+          reference, and profiled to explain which approach wins in which regime, and why.
+        </p>
+        <div class="findings">
+          <div class="finding"><h4>No single winner</h4><p>At one channel my tiled kernel beats cuDNN. By 64 channels cuDNN is ~25× faster. The fastest implementation depends on the shape of the problem.</p></div>
+          <div class="finding"><h4>Reformulate, don't micro-optimize</h4><p>The way past a hand-written kernel wasn't a cleverer kernel. It was turning the convolution into a matrix multiply. im2col + cuBLAS ran ~10× faster than naive.</p></div>
+          <div class="finding"><h4>FP16 isn't free speed</h4><p>Half precision only helps when the Tensor Cores actually engage. In TensorRT it was 5× faster than PyTorch. In raw cuDNN, sometimes <em>slower</em> than FP32.</p></div>
+        </div>
+        <div class="project-charts">
+          <figure><img src="assets/charts/03_mc_ladder.png" alt="Multi-channel convolution timings across channel counts"><figcaption>Who wins reverses with scale.</figcaption></figure>
+          <figure><img src="assets/charts/08_tensorrt.png" alt="TensorRT end-to-end latency vs channels"><figcaption>TensorRT: the production capstone.</figcaption></figure>
+        </div>
+        <div class="pills tag-row"><span>CUDA</span><span>cuDNN</span><span>cuBLAS</span><span>TensorRT</span><span>Nsight</span><span>C++</span></div>
+      </div>
+    </article>
+
+    <!-- Project 02: Pawnhub -->
+    <article class="project">
+      <div class="project-num">02</div>
+      <div class="project-main">
+        <div class="project-links">
+          <a href="chess.html">Full writeup ↗</a>
+          <a href="https://github.com/harshvora7" target="_blank" rel="noopener">GitHub ↗</a>
+        </div>
+        <h3>Pawnhub — a chess engine in C++</h3>
+        <p class="project-desc">
+          A chess engine built from scratch in C++. <em>[One-line summary to fill: search
+          technique, evaluation, move generation, playing strength.]</em>
+        </p>
+        <div class="pills tag-row"><span>C++</span><span>Search</span><span>Algorithms</span></div>
+      </div>
+    </article>
+
+    <p class="more-note">More projects coming soon.</p>
+  </section>
+
+  <!-- ===================== EXPERIENCE ===================== -->
+  <section id="experience" class="section">
+    <p class="sec-label"><span>04</span> / Journey</p>
+    <h2 class="sec-title">Experience &amp; education</h2>
+    <div class="timeline">
+      <div class="tl-item">
+        <div class="tl-date">[dates]</div>
+        <div class="tl-body">
+          <h3>Software Engineer</h3>
+          <p class="tl-org">Sedai · San Jose, CA</p>
+          <p>eBPF-based Kubernetes observability — building low-overhead instrumentation agents on an OpenTelemetry-derived stack.</p>
+        </div>
+      </div>
+      <div class="tl-item">
+        <div class="tl-date">[dates]</div>
+        <div class="tl-body">
+          <h3>Software Engineer II</h3>
+          <p class="tl-org">Juniper Networks</p>
+          <p><em>[Short description of your work here.]</em></p>
+        </div>
+      </div>
+      <div class="tl-item">
+        <div class="tl-date">[dates]</div>
+        <div class="tl-body">
+          <h3>M.S. in Computer Science</h3>
+          <p class="tl-org">North Carolina State University</p>
+          <p><em>[Relevant coursework or focus.]</em></p>
+        </div>
+      </div>
+      <div class="tl-item">
+        <div class="tl-date">[dates]</div>
+        <div class="tl-body">
+          <h3>B.Tech in Computer Science</h3>
+          <p class="tl-org">Manipal Institute of Technology</p>
+          <p><em>[Optional note.]</em></p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ===================== CONTACT ===================== -->
+  <section id="contact" class="section contact">
+    <p class="sec-label"><span>05</span> / Contact</p>
+    <h2 class="sec-title">Let's build something together</h2>
+    <p class="contact-lede">Have a project in mind, or just want to say hi? My inbox is always open.</p>
+    <a class="btn big" href="mailto:harsh.k.vora@gmail.com">Say hello</a>
+    <p class="quote">"Find out why it's slow, then fix it."</p>
+    <div class="socials">
+      <a href="https://github.com/harshvora7" target="_blank" rel="noopener">GitHub</a>
+      <a href="#" target="_blank" rel="noopener">LinkedIn</a>
+      <a href="mailto:harsh.k.vora@gmail.com">Email</a>
+    </div>
+  </section>
+</main>
+
+<footer class="footer">© <span id="year"></span> Harsh Vora. All rights reserved.</footer>
+<script>document.getElementById('year').textContent=new Date().getFullYear();</script>
+</body>
+</html>
