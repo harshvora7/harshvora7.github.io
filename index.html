@@ -29,9 +29,8 @@
     <div class="badge"><span class="dot"></span>Currently — eBPF-based Kubernetes observability @ Sedai</div>
     <h1>Hi, I'm <span class="hl">Harsh Vora</span></h1>
     <p class="hero-lede">
-      Software engineer working on systems and GPU performance. From eBPF observability
-      agents that watch a cluster without slowing it down, to hand-written CUDA kernels.
-      I'd rather find out <em>why</em> something is slow than paper over it.
+      Software engineer working on systems and GPU performance. From low-overhead eBPF
+      observability agents to hand-written CUDA and C++ kernels.
     </p>
     <div class="hero-cta">
       <a class="btn" href="#projects">View my work</a>
@@ -42,46 +41,44 @@
   <!-- ===================== ABOUT ===================== -->
   <section id="about" class="section">
     <p class="sec-label"><span>01</span> / About</p>
-    <h2 class="sec-title">A little about me</h2>
-    <div class="about-grid">
-      <div class="about-copy">
-        <p>
-          Most of what I work on lives below the part anyone sees. The kernel that decides
-          how fast a run actually goes, the observability agent that has to watch a whole
-          cluster without becoming the reason it's slow. I like taking something sluggish,
-          finding out exactly where the time goes, and rebuilding it around that answer.
-          <em>[Edit this bio to your voice.]</em>
-        </p>
-        <p>
-          I hold an M.S. in Computer Science from NC State and a B.Tech from Manipal
-          Institute of Technology. Today I build eBPF-based Kubernetes observability at
-          Sedai, and before that I spent two and a half years at Juniper Networks.
-        </p>
-      </div>
-      <div class="stats">
-        <div class="stat"><span class="num">25×</span><span class="cap">cuDNN speedup at scale (CNN project)</span></div>
-        <div class="stat"><span class="num">5×</span><span class="cap">faster inference via TensorRT</span></div>
-        <div class="stat"><span class="num">43×</span><span class="cap">less on-chip traffic from tiling</span></div>
-      </div>
+    <h2 class="sec-title">About me</h2>
+    <div class="about-copy wide">
+      <p>
+        I'm a software engineer who likes working close to the machine. At Sedai I build
+        eBPF-based observability for Kubernetes, instrumentation that has to watch an entire
+        cluster without becoming the overhead it is meant to measure. Before that I spent two
+        and a half years at Juniper Networks.
+      </p>
+      <p>
+        I studied Computer Science at NC State, where I earned my M.S., and at Manipal
+        Institute of Technology for my B.Tech. Outside of work I build things end to end to
+        understand them. Most recently that has meant a deep study of how CNN inference
+        actually runs on a GPU, carried from a naive CUDA kernel all the way to a production
+        TensorRT engine, and Pawnhub, a chess engine written from scratch in C++.
+      </p>
     </div>
   </section>
 
   <!-- ===================== SKILLS ===================== -->
   <section id="skills" class="section">
     <p class="sec-label"><span>02</span> / Skills</p>
-    <h2 class="sec-title">Tools of the trade</h2>
+    <h2 class="sec-title">Skills</h2>
     <div class="skills-grid">
       <div class="skill-col">
         <h3>Languages</h3>
-        <div class="pills"><span>C++</span><span>Go</span><span>C</span><span>CUDA</span><span>Python</span></div>
+        <div class="pills"><span>C</span><span>C++</span><span>Java</span><span>Python</span><span>Go</span><span>SQL</span><span>Bash</span></div>
       </div>
       <div class="skill-col">
-        <h3>GPU / ML</h3>
-        <div class="pills"><span>CUDA</span><span>cuDNN</span><span>cuBLAS</span><span>TensorRT</span><span>PyTorch</span><span>Nsight</span></div>
+        <h3>Systems &amp; Infrastructure</h3>
+        <div class="pills"><span>eBPF</span><span>Linux kernel internals</span><span>Kubernetes</span><span>EKS</span><span>Docker</span><span>gRPC / Protobuf</span><span>CUDA</span><span>cuDNN</span><span>cuBLAS</span><span>TensorRT</span><span>Nsight</span><span>OpenMP</span><span>MPI</span><span>OpenStack</span><span>OpenTelemetry</span></div>
       </div>
       <div class="skill-col">
-        <h3>Systems &amp; Infra</h3>
-        <div class="pills"><span>Kubernetes</span><span>eBPF</span><span>Docker</span><span>Linux</span><span>OpenTelemetry</span></div>
+        <h3>Machine Learning</h3>
+        <div class="pills"><span>PyTorch</span><span>scikit-learn</span><span>TensorFlow</span><span>SHAP</span><span>ensemble methods</span><span>LSTMs</span><span>Transformers</span></div>
+      </div>
+      <div class="skill-col">
+        <h3>Tools &amp; Frameworks</h3>
+        <div class="pills"><span>AWS (Bedrock, Lambda, S3, DynamoDB, OpenSearch)</span><span>Git</span><span>Rails</span><span>Flask</span><span>CMake</span><span>Apache Spark</span></div>
       </div>
     </div>
   </section>
@@ -124,6 +121,7 @@
       <div class="project-main">
         <div class="project-links">
           <a href="chess.html">Full writeup ↗</a>
+          <a href="https://pawnhub.fly.dev" target="_blank" rel="noopener">Play it live ↗</a>
           <a href="https://github.com/harshvora7" target="_blank" rel="noopener">GitHub ↗</a>
         </div>
         <h3>Pawnhub — a chess engine in C++</h3>
@@ -184,7 +182,7 @@
     <h2 class="sec-title">Let's build something together</h2>
     <p class="contact-lede">Have a project in mind, or just want to say hi? My inbox is always open.</p>
     <a class="btn big" href="mailto:harsh.k.vora@gmail.com">Say hello</a>
-    <p class="quote">"Find out why it's slow, then fix it."</p>
+    <p class="quote">"insert catchy phrase"</p>
     <div class="socials">
       <a href="https://github.com/harshvora7" target="_blank" rel="noopener">GitHub</a>
       <a href="#" target="_blank" rel="noopener">LinkedIn</a>

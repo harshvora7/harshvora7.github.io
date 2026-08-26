@@ -72,13 +72,15 @@ main{max-width:var(--maxw); margin:0 auto; padding:0 clamp(20px,5vw,48px)}
 /* ================= about ================= */
 .about-grid{display:grid; grid-template-columns:1.5fr 1fr; gap:48px; align-items:start}
 .about-copy p{color:var(--muted); margin-bottom:18px; max-width:60ch}
+.about-copy.wide{max-width:70ch}
+.about-copy.wide p{max-width:none}
 .stats{display:flex; flex-direction:column; gap:18px}
 .stat{background:var(--surface); border:1px solid var(--line); border-radius:var(--radius); padding:20px 22px}
 .stat .num{display:block; font-size:2.1rem; font-weight:800; color:var(--accent); letter-spacing:-.02em; font-family:'JetBrains Mono',monospace}
 .stat .cap{display:block; font-size:14px; color:var(--muted); margin-top:4px}
 
 /* ================= skills ================= */
-.skills-grid{display:grid; grid-template-columns:repeat(3,1fr); gap:28px}
+.skills-grid{display:grid; grid-template-columns:repeat(2,1fr); gap:28px}
 .skill-col h3{font-size:1rem; font-weight:700; margin-bottom:14px; color:var(--ink)}
 .pills{display:flex; flex-wrap:wrap; gap:9px}
 .pills span{
