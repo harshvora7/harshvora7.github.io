@@ -3,174 +3,172 @@
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>Harsh Vora — Software Engineer</title>
+<title>harsh-vora — software engineer</title>
 <meta name="description" content="Harsh Vora — software engineer working on systems and GPU performance. eBPF, CUDA, C++.">
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-<link href="https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@500;600;700&family=Inter:wght@400;500;600;700&family=JetBrains+Mono:wght@400;500&display=swap" rel="stylesheet">
+<link href="https://fonts.googleapis.com/css2?family=JetBrains+Mono:wght@400;500;600;700&display=swap" rel="stylesheet">
 <link rel="stylesheet" href="css/style.css">
 </head>
-<body>
-<div class="layout">
+<body id="top">
 
-  <aside class="sidebar">
-    <div class="side-top">
-      <h1 class="name">Harsh Vora</h1>
-      <p class="role">Software Engineer</p>
-      <p class="tagline">Software engineer working on systems and GPU performance. From low-overhead eBPF observability agents to hand-written CUDA and C++ kernels.</p>
-      <nav class="side-nav">
-        <a href="#about" class="nav-item" data-target="about"><span class="nav-line"></span><span>About</span></a>
-        <a href="#work" class="nav-item" data-target="work"><span class="nav-line"></span><span>Work</span></a>
-        <a href="#skills" class="nav-item" data-target="skills"><span class="nav-line"></span><span>Skills</span></a>
-        <a href="#experience" class="nav-item" data-target="experience"><span class="nav-line"></span><span>Experience</span></a>
-        <a href="#contact" class="nav-item" data-target="contact"><span class="nav-line"></span><span>Get in touch</span></a>
-      </nav>
+<header class="nav">
+  <a class="brand" href="#top"><span class="tilde">~/</span>harsh-vora</a>
+  <nav class="nav-links">
+    <a href="#about">about</a>
+    <a href="#skills">skills</a>
+    <a href="#projects">projects</a>
+    <a href="#experience">experience</a>
+    <a href="#contact">contact</a>
+  </nav>
+</header>
+
+<main>
+  <section class="hero">
+    <div class="term">
+      <div class="term-bar">
+        <span class="dot r"></span><span class="dot y"></span><span class="dot g"></span>
+        <span class="term-title">harsh@vora: ~</span>
+      </div>
+      <div class="term-body">
+        <p class="tline"><span class="prompt">harsh@vora:~$</span> whoami</p>
+        <p class="tout name">Harsh Vora</p>
+        <p class="tline"><span class="prompt">harsh@vora:~$</span> cat bio.txt</p>
+        <p class="tout bio">Software engineer working on systems and GPU performance. From
+          low-overhead eBPF observability agents to hand-written CUDA and C++ kernels.<span class="cursor"></span></p>
+        <div class="hero-cta">
+          <a class="btn" href="#projects">./view-work</a>
+          <a class="btn ghost" href="#contact">./get-in-touch</a>
+        </div>
+      </div>
     </div>
-    <div class="side-socials">
-      <a href="https://github.com/harshvora7" target="_blank" rel="noopener">GitHub</a>
-      <a href="#" target="_blank" rel="noopener">LinkedIn</a>
-      <a href="mailto:harsh.k.vora@gmail.com">Email</a>
+  </section>
+
+  <section id="about" class="section">
+    <p class="cmd"><span class="prompt">$</span> cat about.md</p>
+    <div class="prose">
+      <p>
+        I'm a software engineer working on eBPF-based observability for cloud clusters at
+        Sedai. It means instrumenting entire clusters without becoming the overhead it's
+        meant to measure. Before Sedai I was at Juniper Networks, working on Contrail, their
+        network management and cloud automation platform, where I helped build features like
+        MAC-IP learning and BGP-as-a-service.
+      </p>
+      <p>
+        Work aside, I really enjoy low-level systems and GPUs. I ran a study of how CNN
+        inference actually runs on a GPU, carrying it from a naive CUDA kernel all the way to
+        a production TensorRT engine and picking up cuBLAS, kernel fusion, and FP16 along the
+        way. I also used LLMs to optimize low-level cache replacement policies as the final
+        project for my Generative AI class.
+      </p>
+      <p>
+        Right now I'm building an XDP-based load balancer, pushing L4 balancing down into the
+        kernel with XDP and chasing throughput at the lowest level.
+      </p>
+      <p>
+        And for fun there's <b>PawnHub</b>, a C++ chess engine that's crossed ~1800 Elo, with
+        a transposition table, Zobrist hashing, and search heuristics behind a UCI interface.
+      </p>
     </div>
-  </aside>
+  </section>
 
-  <main class="content">
+  <section id="skills" class="section">
+    <p class="cmd"><span class="prompt">$</span> ls skills/</p>
+    <div class="skills">
+      <div class="skill-row"><h3># languages</h3>
+        <div class="stack"><span>C</span><span>C++</span><span>Java</span><span>Python</span><span>Go</span><span>SQL</span><span>Bash</span></div></div>
+      <div class="skill-row"><h3># systems &amp; infrastructure</h3>
+        <div class="stack"><span>eBPF</span><span>Linux kernel internals</span><span>Kubernetes</span><span>EKS</span><span>Docker</span><span>gRPC / Protobuf</span><span>CUDA</span><span>cuDNN</span><span>cuBLAS</span><span>TensorRT</span><span>Nsight</span><span>OpenMP</span><span>MPI</span><span>OpenStack</span><span>OpenTelemetry</span></div></div>
+      <div class="skill-row"><h3># machine learning</h3>
+        <div class="stack"><span>PyTorch</span><span>scikit-learn</span><span>TensorFlow</span><span>SHAP</span><span>ensemble methods</span><span>LSTMs</span><span>Transformers</span></div></div>
+      <div class="skill-row"><h3># tools &amp; frameworks</h3>
+        <div class="stack"><span>AWS (Bedrock, Lambda, S3, DynamoDB, OpenSearch)</span><span>Git</span><span>Rails</span><span>Flask</span><span>CMake</span><span>Apache Spark</span></div></div>
+    </div>
+  </section>
 
-    <section id="about" class="block">
-      <p class="block-label">About</p>
-      <div class="prose">
-        <p>
-          I'm a software engineer working on eBPF-based observability for cloud clusters at
-          Sedai. Involves instrumenting entire clusters without becoming the overhead it's
-          meant to measure. Before Sedai I was at Juniper Networks, working on Contrail,
-          their network management and cloud automation platform, where I helped build
-          features like MAC-IP learning and BGP-as-a-service.
-        </p>
-        <p>
-          Work aside, I really enjoy low-level systems and GPUs. I ran a study of how CNN
-          inference actually runs on a GPU, carrying it from a naive CUDA kernel all the way
-          to a production TensorRT engine and picking up cuBLAS, kernel fusion, and FP16
-          along the way. I also used LLMs to optimize low-level cache replacement policies as
-          the final project for my Generative AI class.
-        </p>
-        <p>
-          Right now I'm building an XDP-based load balancer, pushing L4 balancing down into
-          the kernel with XDP and chasing throughput at the lowest level.
-        </p>
-        <p>
-          And for fun there's <strong>PawnHub</strong>, a C++ chess engine that's crossed
-          ~1800 Elo, with a transposition table, Zobrist hashing, and search heuristics
-          behind a UCI interface.
-        </p>
+  <section id="projects" class="section">
+    <p class="cmd"><span class="prompt">$</span> ls -la projects/</p>
+
+    <article class="card">
+      <div class="card-links">
+        <a href="cnn.html">writeup ↗</a>
+        <a href="https://github.com/harshvora7/accelerating_cnn" target="_blank" rel="noopener">code ↗</a>
       </div>
-    </section>
-
-    <section id="work" class="block">
-      <p class="block-label">Work</p>
-
-      <article class="card">
-        <div class="card-links">
-          <a href="cnn.html">Writeup ↗</a>
-          <a href="https://github.com/harshvora7/accelerating_cnn" target="_blank" rel="noopener">Code ↗</a>
-        </div>
-        <h2>Accelerating CNN Inference on a GPU</h2>
-        <p class="card-desc">
-          Every way a CNN's forward pass gets run on an NVIDIA GPU, from a naive CUDA kernel
-          to a production TensorRT engine. Built from scratch, checked against a CPU
-          reference, and profiled to explain which approach wins in which regime, and why.
-        </p>
-        <ul class="finds">
-          <li><b>No single winner.</b> At one channel my tiled kernel beats cuDNN; by 64 channels cuDNN is ~25× faster. It depends on the shape of the problem.</li>
-          <li><b>Reformulate, don't micro-optimize.</b> Turning the convolution into a matrix multiply (im2col + cuBLAS) beat every hand-tuned direct kernel, ~10× over naive.</li>
-          <li><b>FP16 isn't free speed.</b> It only helps when the Tensor Cores engage: 5× in TensorRT, sometimes slower than FP32 in raw cuDNN.</li>
-        </ul>
-        <div class="charts">
-          <figure><img src="assets/charts/03_mc_ladder.png" alt="Multi-channel conv timings across channel counts"><figcaption>Who wins reverses with scale.</figcaption></figure>
-          <figure><img src="assets/charts/08_tensorrt.png" alt="TensorRT latency vs channels"><figcaption>TensorRT: the production capstone.</figcaption></figure>
-        </div>
-        <div class="stack"><span>CUDA</span><span>cuDNN</span><span>cuBLAS</span><span>TensorRT</span><span>Nsight</span><span>C++</span></div>
-      </article>
-
-      <article class="card">
-        <div class="card-links">
-          <a href="chess.html">Writeup ↗</a>
-          <a href="https://pawnhub.fly.dev" target="_blank" rel="noopener">Play it live ↗</a>
-          <a href="https://github.com/harshvora7" target="_blank" rel="noopener">Code ↗</a>
-        </div>
-        <h2>PawnHub — a chess engine in C++</h2>
-        <p class="card-desc">
-          A chess engine written from scratch in C++, playing at ~1800 Elo. Alpha-beta search
-          with a transposition table, Zobrist hashing, and move-ordering heuristics, all
-          behind a standard UCI interface and playable in the browser.
-        </p>
-        <div class="stack"><span>C++</span><span>Alpha-beta search</span><span>Zobrist hashing</span><span>UCI</span></div>
-      </article>
-    </section>
-
-    <section id="skills" class="block">
-      <p class="block-label">Skills</p>
-      <div class="skills">
-        <div class="skill-row"><h3>Languages</h3>
-          <div class="stack"><span>C</span><span>C++</span><span>Java</span><span>Python</span><span>Go</span><span>SQL</span><span>Bash</span></div></div>
-        <div class="skill-row"><h3>Systems &amp; Infrastructure</h3>
-          <div class="stack"><span>eBPF</span><span>Linux kernel internals</span><span>Kubernetes</span><span>EKS</span><span>Docker</span><span>gRPC / Protobuf</span><span>CUDA</span><span>cuDNN</span><span>cuBLAS</span><span>TensorRT</span><span>Nsight</span><span>OpenMP</span><span>MPI</span><span>OpenStack</span><span>OpenTelemetry</span></div></div>
-        <div class="skill-row"><h3>Machine Learning</h3>
-          <div class="stack"><span>PyTorch</span><span>scikit-learn</span><span>TensorFlow</span><span>SHAP</span><span>ensemble methods</span><span>LSTMs</span><span>Transformers</span></div></div>
-        <div class="skill-row"><h3>Tools &amp; Frameworks</h3>
-          <div class="stack"><span>AWS (Bedrock, Lambda, S3, DynamoDB, OpenSearch)</span><span>Git</span><span>Rails</span><span>Flask</span><span>CMake</span><span>Apache Spark</span></div></div>
+      <h2>accelerating-cnn</h2>
+      <p class="card-desc">
+        Every way a CNN's forward pass gets run on an NVIDIA GPU, from a naive CUDA kernel to
+        a production TensorRT engine. Built from scratch, checked against a CPU reference, and
+        profiled to explain which approach wins in which regime, and why.
+      </p>
+      <ul class="finds">
+        <li><b>No single winner.</b> At one channel my tiled kernel beats cuDNN; by 64 channels cuDNN is ~25× faster. It depends on the shape of the problem.</li>
+        <li><b>Reformulate, don't micro-optimize.</b> Turning the convolution into a matrix multiply (im2col + cuBLAS) beat every hand-tuned direct kernel, ~10× over naive.</li>
+        <li><b>FP16 isn't free speed.</b> It only helps when the Tensor Cores engage: 5× in TensorRT, sometimes slower than FP32 in raw cuDNN.</li>
+      </ul>
+      <div class="charts">
+        <figure><img src="assets/charts/03_mc_ladder.png" alt="Multi-channel conv timings across channel counts"><figcaption>who wins reverses with scale</figcaption></figure>
+        <figure><img src="assets/charts/08_tensorrt.png" alt="TensorRT latency vs channels"><figcaption>tensorrt: the production capstone</figcaption></figure>
       </div>
-    </section>
+      <div class="stack"><span>CUDA</span><span>cuDNN</span><span>cuBLAS</span><span>TensorRT</span><span>Nsight</span><span>C++</span></div>
+    </article>
 
-    <section id="experience" class="block">
-      <p class="block-label">Experience &amp; Education</p>
-      <div class="exp">
-        <div class="exp-item">
-          <div class="exp-head"><h3>Software Engineer</h3><span class="exp-date">[dates]</span></div>
-          <p class="exp-org">Sedai · San Jose, CA</p>
-          <p class="exp-desc">eBPF-based observability for Kubernetes clusters — low-overhead instrumentation built on an OpenTelemetry-derived stack.</p>
-        </div>
-        <div class="exp-item">
-          <div class="exp-head"><h3>Software Engineer II</h3><span class="exp-date">[dates]</span></div>
-          <p class="exp-org">Juniper Networks</p>
-          <p class="exp-desc">Worked on Contrail, Juniper's network management and cloud automation platform — built features including MAC-IP learning and BGP-as-a-service.</p>
-        </div>
-        <div class="exp-item">
-          <div class="exp-head"><h3>M.S. in Computer Science</h3><span class="exp-date">[dates]</span></div>
-          <p class="exp-org">North Carolina State University</p>
-          <p class="exp-desc"><em>[Relevant coursework or focus — optional.]</em></p>
-        </div>
-        <div class="exp-item">
-          <div class="exp-head"><h3>B.Tech in Computer Science</h3><span class="exp-date">[dates]</span></div>
-          <p class="exp-org">Manipal Institute of Technology</p>
-          <p class="exp-desc"><em>[Optional note.]</em></p>
-        </div>
+    <article class="card">
+      <div class="card-links">
+        <a href="chess.html">writeup ↗</a>
+        <a href="https://pawnhub.fly.dev" target="_blank" rel="noopener">play it live ↗</a>
+        <a href="https://github.com/harshvora7" target="_blank" rel="noopener">code ↗</a>
       </div>
-    </section>
+      <h2>pawnhub</h2>
+      <p class="card-desc">
+        A chess engine written from scratch in C++, playing at ~1800 Elo. Alpha-beta search
+        with a transposition table, Zobrist hashing, and move-ordering heuristics, all behind
+        a standard UCI interface and playable in the browser.
+      </p>
+      <div class="stack"><span>C++</span><span>Alpha-beta search</span><span>Zobrist hashing</span><span>UCI</span></div>
+    </article>
+  </section>
 
-    <section id="contact" class="block">
-      <p class="block-label">Get in touch</p>
-      <div class="prose">
-        <p>Have something to talk about, or just want to say hi? My inbox is open.</p>
+  <section id="experience" class="section">
+    <p class="cmd"><span class="prompt">$</span> cat experience.log</p>
+    <div class="exp">
+      <div class="exp-item">
+        <div class="exp-head"><h3>Software Engineer</h3><span class="exp-date">[dates]</span></div>
+        <p class="exp-org">Sedai · San Jose, CA</p>
+        <p class="exp-desc">eBPF-based observability for Kubernetes clusters — low-overhead instrumentation built on an OpenTelemetry-derived stack.</p>
       </div>
-      <a class="btn" href="mailto:harsh.k.vora@gmail.com">Say hello</a>
-      <p class="foot">© <span id="year"></span> Harsh Vora</p>
-    </section>
+      <div class="exp-item">
+        <div class="exp-head"><h3>Software Engineer II</h3><span class="exp-date">[dates]</span></div>
+        <p class="exp-org">Juniper Networks</p>
+        <p class="exp-desc">Worked on Contrail, Juniper's network management and cloud automation platform — built features including MAC-IP learning and BGP-as-a-service.</p>
+      </div>
+      <div class="exp-item">
+        <div class="exp-head"><h3>M.S. in Computer Science</h3><span class="exp-date">[dates]</span></div>
+        <p class="exp-org">North Carolina State University</p>
+        <p class="exp-desc"><em>[Relevant coursework or focus — optional.]</em></p>
+      </div>
+      <div class="exp-item">
+        <div class="exp-head"><h3>B.Tech in Computer Science</h3><span class="exp-date">[dates]</span></div>
+        <p class="exp-org">Manipal Institute of Technology</p>
+        <p class="exp-desc"><em>[Optional note.]</em></p>
+      </div>
+    </div>
+  </section>
 
-  </main>
-</div>
+  <section id="contact" class="section">
+    <p class="cmd"><span class="prompt">$</span> ./get-in-touch</p>
+    <div class="prose">
+      <p>Have something to talk about, or just want to say hi? My inbox is open.</p>
+    </div>
+    <a class="btn" href="mailto:harsh.k.vora@gmail.com">[ say hello ]</a>
+    <div class="socials">
+      <a href="https://github.com/harshvora7" target="_blank" rel="noopener">github</a>
+      <a href="#" target="_blank" rel="noopener">linkedin</a>
+      <a href="mailto:harsh.k.vora@gmail.com">email</a>
+    </div>
+  </section>
+</main>
 
-<script>
-  document.getElementById('year').textContent = new Date().getFullYear();
-  const items = document.querySelectorAll('.nav-item');
-  const byId = Object.fromEntries([...items].map(a => [a.dataset.target, a]));
-  const obs = new IntersectionObserver((entries) => {
-    entries.forEach(e => {
-      if (e.isIntersecting) {
-        items.forEach(i => i.classList.remove('active'));
-        byId[e.target.id]?.classList.add('active');
-      }
-    });
-  }, { rootMargin: '-45% 0px -50% 0px' });
-  document.querySelectorAll('.block').forEach(s => obs.observe(s));
-</script>
+<footer class="footer"><span class="prompt">$</span> echo &copy; <span id="year"></span> Harsh Vora</footer>
+<script>document.getElementById('year').textContent=new Date().getFullYear();</script>
 </body>
 </html>
