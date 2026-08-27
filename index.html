@@ -126,6 +126,72 @@
       </p>
       <div class="stack"><span>C++</span><span>Alpha-beta search</span><span>Zobrist hashing</span><span>UCI</span></div>
     </article>
+    <article class="card">
+      <div class="card-links">
+        <a href="#">code ↗</a>
+      </div>
+      <h2>cacheforge</h2>
+      <p class="card-desc">
+        A generative AI system that automatically writes, tests, and refines CPU cache
+        replacement policies. A large language model proposes policy variants from a small set
+        of baselines, compiles them into a simulator, and benchmarks them on real CPU traces.
+        I built a graph of thought memory and a discovery log so it learns from past failures
+        and pushes forward from its best branches, a surrogate model that predicts a
+        candidate's quality to skip expensive simulations, and an explainer that summarizes
+        each policy's logic and how it differs from its parent. The best policy it found
+        improved cache hit rate by 2% over LRU on memory intensive SPEC CPU 2017 traces, in
+        about 50 iterations.
+      </p>
+      <div class="stack"><span>LLMs</span><span>Python</span><span>Graph of Thought</span><span>Simulation</span></div>
+    </article>
+
+    <article class="card">
+      <div class="card-links">
+        <a href="#">code ↗</a>
+      </div>
+      <h2>xdp-load-balancer</h2>
+      <p class="card-desc">
+        An in progress project that pushes layer four load balancing down into the Linux
+        kernel with XDP, the fastest place in the stack to touch a packet, alongside a rate
+        limiter, chasing raw throughput at the lowest level. Writeup coming soon.
+      </p>
+      <div class="stack"><span>XDP</span><span>eBPF</span><span>C</span><span>Linux kernel</span></div>
+    </article>
+
+    <article class="card">
+      <div class="card-links">
+        <a href="#">code ↗</a>
+      </div>
+      <h2>diabetes-classifier</h2>
+      <p class="card-desc">
+        A diabetes risk classifier on structured health data, framing early screening as a
+        binary classification problem across two public datasets. I handled a severe nine to
+        ninety one class imbalance with SMOTE and replaced medically impossible zero values
+        with feature medians, which lifted recall on the rare positive class well above a
+        naive baseline. I trained and tuned Logistic Regression, Random Forest, and SVM with
+        randomized search and cross validation, then combined them in a stacking ensemble.
+        Random Forest reached 82% accuracy and 0.85 ROC AUC, and I used SHAP to confirm the
+        model leaned on clinically meaningful risk factors.
+      </p>
+      <div class="stack"><span>scikit-learn</span><span>SMOTE</span><span>SHAP</span><span>ensembles</span></div>
+    </article>
+
+    <article class="card">
+      <div class="card-links">
+        <a href="#">code ↗</a>
+      </div>
+      <h2>fake-news-detection</h2>
+      <p class="card-desc">
+        A deep learning pipeline that tells fake news from real using natural language
+        processing. I did the full path of cleaning, exploration, feature engineering, and
+        tokenizing and padding the text, then built and compared LSTM, BiLSTM, and Transformer
+        based models with hyperparameter tuning, regularization, and SHAP based explainability.
+        It reached 92% accuracy on both training and validation. Next steps are pulling from
+        more datasets and scraping live articles so the training data better reflects real
+        world fake content.
+      </p>
+      <div class="stack"><span>PyTorch</span><span>LSTM</span><span>Transformers</span><span>NLP</span></div>
+    </article>
   </section>
 
   <section id="experience" class="section">
